@@ -1,0 +1,28 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [pgcrypto]
+}
+
+model desenvolvedores {
+  id             String    @unique @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name           String    @db.VarChar
+  email          String?   @unique @db.VarChar
+  sexo           String?   @db.Char(1)
+  datanascimento DateTime? @db.Date
+  idade          Int?
+  hobby          String?   @db.VarChar
+  nivel_id       String?   @db.Uuid
+  niveis         niveis?   @relation(fields: [nivel_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model niveis {
+  id              String            @unique @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  descricao       String            @db.VarChar
+  desenvolvedores desenvolvedores[]
+}

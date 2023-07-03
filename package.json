@@ -1,0 +1,29 @@
+{
+  "name": "desafiogazintech",
+  "version": "1.0.0",
+  "description": "Projeto base para o teste de avaliação para o ingresso de novos desenvolvedores junto a Gazin<Tech>",
+  "main": "src/index.js",
+  "author": "Maicon Fritsch",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^4.16.2",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "nodemon": "^2.0.22",
+    "pg": "^8.11.0",
+    "prisma": "^4.16.2"
+  },
+  "devDependencies": {
+    "body-parse": "^0.1.0",
+    "eslint": "^8.43.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  }
+}
